@@ -2,6 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['upload.wikimedia.org', 'cdn.sanity.io']
+    domains: ['upload.wikimedia.org', 'cdn.sanity.io', 'www.gravatar.com', 
+  'lh3.googleusercontent.com']
   }
 }

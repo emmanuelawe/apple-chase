@@ -4,10 +4,13 @@ import React from 'react'
 import {HiSearch, HiOutlineShoppingBag, HiOutlineUser} from 'react-icons/hi'
 import {useSelector} from 'react-redux'
 import { selectBasketItems } from '../redux/basketSlice'
+import {signIn, signOut, useSession} from 'next-auth/react'
+
 
 const Header = () => {
-     const session = false
+     const {data: session} = useSession()
      const items = useSelector(selectBasketItems)
+
 
   return (
     <header className='sticky top-0 z-30 flex w-full items-center justify-between bg-[#e7ecee] p-4'>
@@ -45,18 +48,18 @@ const Header = () => {
     {session ? (
           <Image
             src={
-            //   session.user?.image ||
+              session.user?.image ||
               "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
             }
             alt=""
             className="cursor-pointer rounded-full"
             width={34}
             height={34}
-            // onClick={() => signOut()}
+            onClick={() => signOut()}
           />
         ) : (
           <HiOutlineUser className="headerIcon" 
-        //   onClick={() => signIn()} 
+          onClick={() => signIn()} 
           />
         )}
     </div>

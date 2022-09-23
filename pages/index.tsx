@@ -8,10 +8,13 @@ import Landing from '../components/Landing'
 import Product from '../components/Product'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
+import type {Session} from 'next-auth'
+import {getSession} from 'next-auth/react'
 
 interface Props {
   categories: Category[],
   products: Product[]
+  session: Session | null
 }
 
 const Home = ({categories, products}: Props ) => {
@@ -80,14 +83,15 @@ export default Home
 
 // Backend code
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const categories = await fetchCategories()
   const products = await fetchProducts()
-
+  const session = await getSession(context)
   return {
     props: {
       categories, 
-      products
+      products,
+      session
     }
   }
 }
