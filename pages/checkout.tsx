@@ -67,7 +67,7 @@ const Checkout = () => {
   return (
     <div className='min-h-screen overflow-hidden bg-[#e7ecee]'>
         <Head>
-        <title>Bag - Apple</title>
+        <title>Bag - Swirx</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

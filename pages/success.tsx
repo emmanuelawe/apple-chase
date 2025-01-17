@@ -39,7 +39,7 @@ const handleShowOrderSummary = () => {
   return (
     <div>
         <Head>
-        <title>Thank you! - Apple</title>
+        <title>Thank you! - Swirx</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

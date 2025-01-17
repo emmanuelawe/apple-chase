@@ -28,7 +28,7 @@ const Home = ({categories, products}: Props ) => {
   return (
     <div className="">
       <Head>
-        <title>Apple</title>
+        <title>Swirx</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <Header />
